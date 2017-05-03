@@ -5,7 +5,7 @@ A tree-like data structure for performing complex, persistent sorting.
 This data structure was originally intended for sorting rendering draw
 calls in a relatively efficient way, and subsequently maintaining that sort
 order with minimal overhead. It may have broader applications, but will for 
-many use cases either be overkill or lack flexibility.
+many use-cases either be overkill or lack flexibility.
 
 A sort tree will only sort objects that extend (not just implement) the
 `SortTreeEntry` class. Additionally the values that you wish to split/group/sort
@@ -121,7 +121,7 @@ for (final drawCall in sorter) {
 ```
 
 If we change a `MutableValue` on an `ObjectDrawCall` (e.g. `cameraDistance`) the
-tree will adjust automatically and when the sorter is next traversed.
+tree will adjust automatically when the sorter is next traversed.
 
 Note that this is merely one example of how draw calls might be ordered. The order
 that yields maximum performance will depend on your application. For example, you may
