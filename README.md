@@ -7,7 +7,7 @@ calls in a relatively efficient way, and subsequently maintaining that sort
 order with minimal overhead. It may have broader applications, but will for 
 many use-cases either be overkill or lack flexibility.
 
-A sort tree will only sort objects that extend (not just implement) the
+A sort tree will only sort objects that `extend` (not just `implement`) the
 `SortTreeEntry` class. Additionally the values that you wish to split/group/sort
 by must be wrapped in a `DecisionValue` (e.g. `StaticValue` or `MutableValue`).
 
@@ -32,7 +32,7 @@ class ObjectDrawCall extends SortTreeEntry {
 ```
 
 If we have a large number of such draw calls, we can use a sort tree to attempt to
-arrange these in an order that results both in the objects being displayed correctly
+arrange these in an order that results in the objects being displayed both correctly
 and efficiently. Notably we may want to order such that:
 
 - All opaque objects are rendered before objects that are (slightly) translucent.
