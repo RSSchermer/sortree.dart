@@ -45,7 +45,7 @@ and efficiently. Notably we may want to order such that:
   may be costly. Reducing the amount of changes may therefore increase performance.
 - The material groups are ordered such that the group closest to the camera is rendered
   first and the group furthest from the camera is rendered last. This may allow us to
-  take advantage of 'early Z optimization', where triangles that are occluded by objects
+  take advantage of 'early Z optimization', where fragments that are occluded by objects
   closer to the camera can be discarded early, resulting in less strain on the GPU.
   
 To achieve these things we would construct the following sort tree:
@@ -105,13 +105,13 @@ final sorter = new SplitterNode<ObjectDrawCall, num>(
 The class documentation for `SplitterNode`, `GroupingNode` and `CollectorNode`
 has more details on how they are used.
 
-We would then pass our draw call to this sorter using the `process` method:
+We would then pass our draw calls to this sorter by calling the `process` method:
 
 ```dart
 sorter.process(someDrawCall);
 ```
 
-Now we can iterate over the draw calls in the sorter and they will be traversed
+Now when we iterate over the draw calls in the sorter they will be traversed
 in the order we declared:
 
 ```dart
